@@ -4,7 +4,8 @@ import '../assets/styles/formbutton.less';
 
 export default class Formbutton extends Component {
   static propTypes = {
-    type:PropTypes.oneOf(['plain'])
+    type:PropTypes.oneOf(['plain']),
+    onClick:PropTypes.func
   }
   render() {
       let btnClz='from-btn'
@@ -16,7 +17,7 @@ export default class Formbutton extends Component {
         btnClz+=' plain';
     }
     return (
-     <button className={btnClz}>{this.props.children}</button>
+     <button className={btnClz} type='button' onClick={this.props.onClick}>{this.props.children}</button>
     )
   }
 }

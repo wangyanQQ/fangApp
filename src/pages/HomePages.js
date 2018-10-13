@@ -3,7 +3,7 @@
  import Solid from '../components/Solid.js';
  import FlexList from '../components/FlexList.js';
  import Demo from '../components/Demo';
- import ButtomNav from '../components/ButtomNav.js';
+//  import ButtomNav from '../components/ButtomNav.js';
  import GridExample from '../components/Grid.js';
  import '../assets/styles/homepage.less';
 export default class HomePages extends Component {  
@@ -40,7 +40,7 @@ export default class HomePages extends Component {
                 <Demo/>               
             </div>
             {/* 底部导航 */}
-            <ButtomNav/>
+            {/* <ButtomNav/> */}
         </div>
      
     )

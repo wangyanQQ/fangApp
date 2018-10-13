@@ -3,50 +3,23 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { TabBar } from 'antd-mobile';
 import '../assets/styles/tabbar.less'
-// 定义类
-class TabBarExample extends React.Component {
+// 引入组件
+import HomePages from './HomePages.js';
+import Love from './Love.js';
+import My from './My.js';
+import SmallTalk from './SmallTalk.js';
+// 定义类 export default
+export default class TabBarExample extends React.Component {
     // 构造器
   constructor(props) {
     super(props);
     // 定义静态属性
     this.state = {
-      selectedTab: 'redTab',
+      selectedTab: 'blueTab',
       hidden: false,
       fullScreen: true,
     };
   }
-//   渲染内容部分
-  renderContent(pageText) {
-//     return ( 
-    //   <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-    //   1234
-        // {/* <div style={{ paddingTop: 60 }}>Clicked “{pageText}” tab， show “{pageText}” information</div> */}
-        // {/* <a style={{ display: 'block', marginTop: 40, marginBottom: 20, color: '#108ee9' }}
-//           onClick={(e) => {
-//             //   preventDefault() 方法阻止元素发生默认的行为
-//             e.preventDefault();
-//             // 重置状态
-//             this.setState({
-//               hidden: !this.state.hidden,
-//             });
-//           }}
-//         >
-//           Click to show/hide tab-bar
-//         </a> */}
-//         {/* <a style={{ display: 'block', marginBottom: 600, color: '#108ee9' }}
-//           onClick={(e) => {
-//             e.preventDefault();
-//             this.setState({
-//               fullScreen: !this.state.fullScreen,
-//             });
-//           }}
-//         >
-//           Click to switch fullscreen
-//         </a> */}
-//       </div>
-//     ); 
-  }
-
   render() {     
     return (
       <div style={this.state.fullScreen ? { position: 'fixed', height: '100%', width: '100%', top: 0 } : { height: '400px' }}>
@@ -64,9 +37,9 @@ class TabBarExample extends React.Component {
         {/* 底部导航内容 */}
           <TabBar.Item
         //   标题文字
-            title="Life"
+            title="首页"
             // 唯一标识
-            key="Life"
+            key="首页"
             // 默认展示图片
             icon={<div style={{
                 width: '30px',
@@ -100,9 +73,11 @@ class TabBarExample extends React.Component {
                 selectedTab: 'blueTab',
               });
             }}
-            data-seed="logId"
+            data-seed="logId1"
           >
-            {this.renderContent('Life')}
+          {/* 要渲染的数据 */}
+            {/* {this.renderContent('Life')} */}
+            <HomePages/>
           </TabBar.Item>
           {/* 第二列 */}
           <TabBar.Item
@@ -113,7 +88,7 @@ class TabBarExample extends React.Component {
                 fontSize:'30px',
                 // background: 'url(https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg) center center /  21px 21px no-repeat'
              }}
-             className='iconfont icon-lianxirenmingdan'
+             className='iconfont icon-xiaoxi'
               />
             }
             selectedIcon={
@@ -123,11 +98,11 @@ class TabBarExample extends React.Component {
               fontSize:'30px',
                 // background: 'url(https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg) center center /  21px 21px no-repeat'
              }}
-             className='iconfont icon-lianxirenmingdan'
+             className='iconfont icon-xiaoxi'
               />
             }
-            title="Koubei"
-            key="Koubei"
+            title="微聊"
+            key="微聊"
             // badge={'new'}
             selected={this.state.selectedTab === 'redTab'}
             onPress={() => {
@@ -135,9 +110,10 @@ class TabBarExample extends React.Component {
                 selectedTab: 'redTab',
               });
             }}
-            data-seed="logId1"
+            // data-seed="logId1"
           >
-            {this.renderContent('Koubei')}
+            {/* {this.renderContent('Koubei')} */}
+            <SmallTalk/>
           </TabBar.Item>
           {/* 第三列 */}
           <TabBar.Item
@@ -161,8 +137,8 @@ class TabBarExample extends React.Component {
              className='iconfont icon-xingxing'
               />
             }
-            title="Friend"
-            key="Friend"
+            title="推荐"
+            key="推荐"
             // dot
             selected={this.state.selectedTab === 'greenTab'}
             onPress={() => {
@@ -171,22 +147,9 @@ class TabBarExample extends React.Component {
               });
             }}
           >
-            {this.renderContent('Friend')}
-          </TabBar.Item>
-         {/*  <TabBar.Item
-            icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-            selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
-            title="My"
-            key="my"
-            selected={this.state.selectedTab === 'yellowTab'}
-            onPress={() => {
-              this.setState({
-                selectedTab: 'yellowTab',
-              });
-            }}
-          >
-            {this.renderContent('My')}
-          </TabBar.Item> */}
+            {/* {this.renderContent('Friend')} */}
+            <Love/>
+          </TabBar.Item>       
           {/* 第四列 */}
              <TabBar.Item
             icon={
@@ -209,8 +172,8 @@ class TabBarExample extends React.Component {
              className='iconfont icon-icontouxiang'
               />
             }
-            title="my"
-            key="my"
+            title="我的"
+            key="我的"
             // dot
             selected={this.state.selectedTab === 'yellowTab'}
             onPress={() => {
@@ -220,6 +183,7 @@ class TabBarExample extends React.Component {
             }}
           >
             {/* {this.renderContent('my')} */}
+            <My/>
           </TabBar.Item>
         </TabBar>
       </div>
@@ -227,4 +191,3 @@ class TabBarExample extends React.Component {
   }
 }
 
-ReactDOM.render(<TabBarExample />,  document.getElementById('root'));

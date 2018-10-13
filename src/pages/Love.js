@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Demo  from '../components/Demo.js';
-import ButtomNav from '../components/ButtomNav.js'
+// import ButtomNav from '../components/ButtomNav.js'
 
 export default class Love extends Component {
   render() {
@@ -8,7 +8,7 @@ export default class Love extends Component {
     return (        
       <div>
           <Demo/>
-        <ButtomNav/>
+        {/* <ButtomNav/> */}
       </div>
     )
   }

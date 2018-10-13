@@ -8,7 +8,7 @@ export default class TopNavBar extends Component {
     <NavBar
       mode="light"
       icon={<Icon type="left" />}
-      onLeftClick={() => console.log('onLeftClick')}
+      onLeftClick={() =>console.log('123')}
       style={{backgroundColor:'#F8F8F8',fontSize:25,height:60}}
      
     >手机注册</NavBar>  

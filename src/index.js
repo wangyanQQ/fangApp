@@ -1,8 +1,9 @@
 // 入口文件
-// import './pages/App';
+import './pages/App';
 // 测试文件
 // import './components/DataList'
-import './components/TabBar'
+// import './components/TabBar'
+// import './text/02React.router/App'
 
 // 引入重置样式
 import 'normalize.css';
